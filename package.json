@@ -1,0 +1,26 @@
+{
+  "name": "verafy-devnet",
+  "version": "0.0.1-alpha",
+  "private": true,
+  "type": "module",
+  "description": "devnet.verafy.ai: a live, auditable view of the Verafy devnet on Solana.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "npx serve out",
+    "typecheck": "tsc --noEmit",
+    "record": "node recorder/record.mjs --out data/run.json && cp data/run.json public/run.json",
+    "record:anchor": "node recorder/record.mjs --anchor --out data/run.json && cp data/run.json public/run.json",
+    "verify": "node recorder/verify.mjs data/run.json"
+  },
+  "dependencies": {
+    "next": "15.5.4",
+    "react": "19.1.1",
+    "react-dom": "19.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "22.18.6",
+    "@types/react": "19.1.13",
+    "typescript": "5.9.2"
+  }
+}
