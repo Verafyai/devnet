@@ -10,6 +10,7 @@ const VIP: Record<string, [string, string]> = {
   hackathon: ['0031', 'A prize pool graded by a council from repository snapshots.'],
   'dao-constitution': ['0032', 'A treasury that executes only what the constitution allows.'],
   treasury: ['0011', 'A budget that pays only for its purpose, under caps.'],
+  'verafy-certification': ['0034', 'A program’s report card on Solana, written only from a jury ruling on a Fuzzy report.'],
 }
 
 export default function Page() {

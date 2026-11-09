@@ -27,6 +27,7 @@ export const TEMPLATE: Record<string, { name: string; color: string; asc?: strin
   hackathon: { name: 'Hackathon Grant', color: '#7CC4FA', asc: 'hackathon' },
   'dao-constitution': { name: 'DAO Constitution', color: '#C7A6FF', asc: 'dao-constitution' },
   treasury: { name: 'Treasury', color: '#F0B45A', asc: 'treasury' },
+  'verafy-certification': { name: 'Verafy Certification', color: '#9BE38A', asc: 'verafy-certification' },
   facts: { name: 'Fact check', color: '#A9B4C0' },
 }
 export const answerColor = (a: string) => (/^(REJECT|REFUND|VIOLATED|NOT_CLEARED|NOT_MET|NO)$/.test(a) ? '#F28B82' : /^(PARTIAL)$/.test(a) || /^[0-5]$/.test(a) ? '#F0B45A' : '#5FE0C8')
