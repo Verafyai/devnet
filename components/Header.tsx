@@ -1,23 +1,17 @@
 'use client'
-import { usePathname } from 'next/navigation'
-import { Mark } from './Logo'
 import { useDevnet } from '@/lib/devnet'
-import { run } from '@/lib/run'
 
-const LINKS: [string, string][] = [['/', 'Map'], ['/pipeline/', 'Pipeline'], ['/docket/', 'Docket'], ['/templates/', 'Templates'], ['/about/', 'What is real']]
-
+/** The canonical Verafy header (www.verafy.ai/header/v1), with the live devnet slot and the rest of the site menu. */
 export function Header() {
-  const path = usePathname() ?? '/'
   const { slot, error } = useDevnet()
   return (
-    <header className="hdr">
-      <a href="/" className="brand"><Mark size={30} />Verafy Devnet</a>
-      <span className="pill">v{run.version}</span>
-      <span className="live" aria-live="polite"><span className={error ? 'dot off' : 'dot'} />{slot ? `Solana devnet · slot ${slot.toLocaleString('en-US')}` : error ? 'devnet RPC unreachable' : 'connecting to devnet'}</span>
-      <nav className="nav" aria-label="Main">
-        {LINKS.map(([h, l]) => <a key={h} href={h} className={path === h || (h !== '/' && path.startsWith(h)) ? 'on' : undefined} aria-current={path === h ? 'page' : undefined}>{l}</a>)}
-        <a href="/join/" className="cta">Join the devnet</a>
-      </nav>
-    </header>
+    <verafy-header product="devnet" links="Map:/, Pipeline:/pipeline/, Docket:/docket/" style={{ display: 'block', minHeight: 64, background: '#0B0E12' }}>
+      <span slot="status" aria-live="polite">{slot ? `Solana devnet, slot ${slot.toLocaleString('en-US')}` : error ? 'devnet RPC unreachable' : 'connecting to devnet'}</span>
+      <div slot="menu" className="vh-menu">
+        <a href="/templates/">Templates</a>
+        <a href="/about/">What is real</a>
+        <a href="/join/">Join the devnet</a>
+      </div>
+    </verafy-header>
   )
 }

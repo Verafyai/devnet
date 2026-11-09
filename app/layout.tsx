@@ -1,6 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter, JetBrains_Mono } from 'next/font/google'
+import Script from 'next/script'
 import { Header } from '@/components/Header'
 import { ClockProvider } from '@/lib/clock'
 import { run } from '@/lib/run'
@@ -20,6 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${sans.variable} ${mono.variable}`}>
       <body>
+        <Script src="https://www.verafy.ai/header/v1/verafy-header.js" strategy="afterInteractive" />
         <ClockProvider>
           <Header />
           {children}

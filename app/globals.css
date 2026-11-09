@@ -46,3 +46,7 @@ td{padding:11px 12px;border-top:1px solid var(--line2);vertical-align:top}
 .note{font-size:13px;color:var(--dim)}
 .foot{border-top:1px solid #141B23;padding:16px 20px;font-size:13px;color:var(--dim);display:flex;flex-wrap:wrap;gap:8px 20px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* Site menu content inside the canonical header's menu sheet. */
+.vh-menu a { display: block; padding: 12px 0; color: #C9D2DC; text-decoration: none; font-size: 15px; border-bottom: 1px solid #1D2630; }
+.vh-menu a:hover { color: #fff; }
